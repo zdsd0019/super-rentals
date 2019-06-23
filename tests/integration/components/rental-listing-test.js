@@ -2,25 +2,26 @@ import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
+import EmberObject from '@ember/object';
+import { run } from '@ember/runloop';
+
+let rental = EmberObject.create({
+  image: 'fake.png',
+  title: 'test-title',
+  owner: 'test-owner',
+  category: 'test-type',
+  city: 'test-city',
+  bedrooms: 3
+});
 
 module('Integration | Component | rental-listing', function(hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders', async function(assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
+  test('should display rental details', function(assert) {
+    this.set('rentalObj', rental);
+});
 
-    await render(hbs`<RentalListing />`);
-
-    assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      <RentalListing>
-        template block text
-      </RentalListing>
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
-  });
+test('should toggle wide class on click', function(assert) {
+    this.set('rentalObj', rental);
+});
 });
