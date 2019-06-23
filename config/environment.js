@@ -1,15 +1,9 @@
 'use strict';
 
 module.exports = function(environment) {
-<<<<<<< HEAD
   var ENV = {
     modulePrefix: 'super-rentals',
     environment: environment,
-=======
-  let ENV = {
-    modulePrefix: 'my-app',
-    environment,
->>>>>>> e14bd1c... message
     rootURL: '/',
     locationType: 'auto',
     EmberENV: {
