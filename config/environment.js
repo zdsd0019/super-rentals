@@ -1,15 +1,25 @@
-/* jshint node: true */
+'use strict';
 
 module.exports = function(environment) {
+<<<<<<< HEAD
   var ENV = {
     modulePrefix: 'super-rentals',
     environment: environment,
+=======
+  let ENV = {
+    modulePrefix: 'my-app',
+    environment,
+>>>>>>> e14bd1c... message
     rootURL: '/',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
-        // e.g. 'with-controller': true
+        // e.g. EMBER_NATIVE_DECORATOR_SUPPORT: true
+      },
+      EXTEND_PROTOTYPES: {
+        // Prevent Ember Data from overriding Date.parse.
+        Date: false
       }
     },
 
@@ -36,10 +46,11 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
+    ENV.APP.autoboot = false;
   }
 
   if (environment === 'production') {
-
+    // here you can enable a production-specific feature
   }
 
   return ENV;
